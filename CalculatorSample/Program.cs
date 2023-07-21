@@ -42,6 +42,7 @@ do
 
     Console.Write("Press enter to continue or 'quit' to stop: ");
     input = Console.ReadLine();
+    input = input.ToLower();
 } while (input is not "quit" and not "q");
 
 Console.WriteLine("Thank you for using the calculator!");
