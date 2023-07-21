@@ -1,17 +1,10 @@
 ﻿Console.WriteLine("Welcome to the calculator!");
 
-int accumulator = 0;
-string input;
-
 Console.Write("Enter an initial value: ");
-input = Console.ReadLine();
+string input = Console.ReadLine();
+int accumulator = int.Parse(input);
 
-if (input != "")
-{
-    accumulator = int.Parse(input);
-}
-
-Console.WriteLine("Initial value: " + accumulator);
+Console.WriteLine("Initial value: " + 0);
 
 do
 {
@@ -40,7 +33,7 @@ do
             break;
     }
 
-    Console.WriteLine("Current value: " + accumulator);
+    Console.WriteLine("Current value: " + 0);
 
     Console.Write("Press enter to continue or 'quit' to stop: ");
     input = Console.ReadLine();
