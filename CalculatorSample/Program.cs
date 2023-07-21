@@ -21,7 +21,7 @@
             Console.Write("Enter operation: ");
             string operation = Console.ReadLine();
 
-            Console.Write("Enter operand (availabled operands: +, -, x, /): ");
+            Console.Write("Enter operand (available operands: +, -, x, /): ");
             input = Console.ReadLine();
             int operand = int.Parse(input);
 
