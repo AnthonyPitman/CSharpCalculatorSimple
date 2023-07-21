@@ -3,6 +3,14 @@
 int accumulator = 0;
 string input;
 
+Console.Write("Enter an initial value: ");
+input = Console.ReadLine();
+
+if (input != "")
+{
+    accumulator = int.Parse(input);
+}
+
 Console.WriteLine("Initial value: " + accumulator);
 
 do
