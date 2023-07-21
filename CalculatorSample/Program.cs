@@ -20,7 +20,7 @@ do
     string operation = Console.ReadLine();
 
     // Get operand from user
-    Console.Write("Enter operand: ");
+    Console.Write("Enter operand (availabled operands: +, -, x, /): ");
     input = Console.ReadLine();
     int operand = int.Parse(input);
 
