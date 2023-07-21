@@ -26,6 +26,7 @@ do
             accumulator -= operand;
             break;
         case "x":
+        case "*":
             accumulator *= operand;
             break;
         case "/":
