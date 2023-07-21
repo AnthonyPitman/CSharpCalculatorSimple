@@ -19,16 +19,16 @@ do
     switch (operation)
     {
         case "+":
-            accumulator = accumulator + operand;
+            accumulator += operand;
             break;
         case "-":
-            accumulator = accumulator - operand;
+            accumulator -= operand;
             break;
         case "x":
-            accumulator = accumulator * operand;
+            accumulator *= operand;
             break;
         case "/":
-            accumulator = accumulator / operand;
+            accumulator /= operand;
             break;
     }
 
