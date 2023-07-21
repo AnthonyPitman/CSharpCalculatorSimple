@@ -1,18 +1,22 @@
 ﻿Console.WriteLine("Welcome to the calculator!");
 
-Console.Write("Enter an initial value: ");
-string input = Console.ReadLine();
-int accumulator = int.Parse(input);
+int accumulator = 0;
 
-Console.WriteLine("Initial value: " + 0);
+Console.Write("Enter an initial value (press enter for 0): ");
+string input = Console.ReadLine();
+
+if (input != "")
+{
+    accumulator = int.Parse(input);
+}
+
+Console.WriteLine("Initial value: " + accumulator);
 
 do
 {
-    // Get operation from user
     Console.Write("Enter operation: ");
     string operation = Console.ReadLine();
 
-    // Get operand from user
     Console.Write("Enter operand (availabled operands: +, -, x, /): ");
     input = Console.ReadLine();
     int operand = int.Parse(input);
@@ -34,10 +38,10 @@ do
             break;
     }
 
-    Console.WriteLine("Current value: " + 0);
+    Console.WriteLine("Current value: " + accumulator);
 
     Console.Write("Press enter to continue or 'quit' to stop: ");
     input = Console.ReadLine();
-} while (input != "quit");
+} while (input is not "quit" and not "q");
 
 Console.WriteLine("Thank you for using the calculator!");
