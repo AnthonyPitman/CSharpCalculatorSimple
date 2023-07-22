@@ -16,8 +16,6 @@
 
         Console.WriteLine($"Initial value: {accumulator}");
 
-        bool shouldContinue;
-
         do
         {
             Console.Write("Enter operation: ");
