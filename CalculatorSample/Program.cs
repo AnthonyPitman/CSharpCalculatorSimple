@@ -45,13 +45,17 @@
             }
 
             Console.WriteLine($"Current value: {accumulator}");
-
-            Console.Write("Press enter to continue or 'quit' to stop: ");
-            input = Console.ReadLine();
-            input = input?.ToLower();
-            shouldContinue = input is not "quit" and not "q";
-        } while (shouldContinue);
+        } while (ShouldContinue());
 
         Console.WriteLine("Thank you for using the calculator!");
+    }
+
+    static bool ShouldContinue()
+    {
+        Console.Write("Press enter to continue or 'quit' to stop: ");
+        string? userInput = Console.ReadLine();
+        userInput = userInput?.ToLower();
+        bool shouldContinue = userInput is not "quit" and not "q";
+        return shouldContinue;
     }
 }
