@@ -18,10 +18,10 @@
 
         do
         {
-            Console.Write("Enter operation: ");
+            Console.Write("Enter operation (available operations: +, -, x, /): ");
             string operation = Console.ReadLine() ?? "";
 
-            Console.Write("Enter operand (available operands: +, -, x, /): ");
+            Console.Write("Enter operand: ");
             input = Console.ReadLine() ?? "";
             int operand = int.Parse(input);
 
