@@ -1,4 +1,5 @@
-﻿class CalculatorSample
+﻿namespace Calculator;
+class CalculatorSample
 {
     public static void Main()
     {
@@ -10,7 +11,7 @@
 
         do
         {
-            string operation = GetOperationFromUser();
+            Operation operation = GetOperationFromUser();
             int operand = GetOperandFromUser();
             accumulator = CalculateNewValue(accumulator, operation, operand);
 
@@ -43,22 +44,35 @@
         return operand;
     }
 
-    private static string GetOperationFromUser()
+    private static Operation GetOperationFromUser()
     {
-        Console.Write("Enter operation (available operations: +, -, x, /): ");
-        string operation = Console.ReadLine() ?? "";
-        return operation;
+        Operation? operation;
+        do
+        {
+            Console.Write("Enter operation (available operations: +, -, x, /): ");
+            string input = Console.ReadLine() ?? "";
+
+            operation = input switch
+            {
+                "+" => Operation.Add,
+                "-" => Operation.Subtract,
+                "*" or "x" => Operation.Multiply,
+                "/" => Operation.Divide,
+                _ => null,
+            };
+        } while (operation is null);
+
+        return (Operation)operation; // operation being null is handled by the loop
     }
 
-    private static int CalculateNewValue(int currentValue, string? operation, int operand)
+    private static int CalculateNewValue(int currentValue, Operation operation, int operand)
     {
         int newValue = operation switch
         {
-            "+" => currentValue + operand,
-            "-" => currentValue - operand,
-            "x" or "*" => currentValue * operand,
-            "/" => currentValue / operand,
-            _ => currentValue,
+            Operation.Add => currentValue + operand,
+            Operation.Subtract => currentValue - operand,
+            Operation.Multiply => currentValue * operand,
+            Operation.Divide => currentValue / operand,
         };
         return newValue;
     }
@@ -71,4 +85,12 @@
         bool shouldContinue = input is not "quit" and not "q";
         return shouldContinue;
     }
+}
+
+public enum Operation
+{
+    Add,
+    Subtract,
+    Multiply,
+    Divide
 }
