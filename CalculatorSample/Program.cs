@@ -27,27 +27,39 @@
             input = Console.ReadLine() ?? "";
             int operand = int.Parse(input);
 
-            switch (operation)
-            {
-                case "+":
-                    accumulator += operand;
-                    break;
-                case "-":
-                    accumulator -= operand;
-                    break;
-                case "x":
-                case "*":
-                    accumulator *= operand;
-                    break;
-                case "/":
-                    accumulator /= operand;
-                    break;
-            }
+            accumulator = CalculateNewValue(accumulator, operation, operand);
 
             Console.WriteLine($"Current value: {accumulator}");
         } while (ShouldContinue());
 
         Console.WriteLine("Thank you for using the calculator!");
+    }
+
+    static int CalculateNewValue(int currentValue, string? operation, int operand)
+    {
+        int newValue;
+
+        switch (operation)
+        {
+            case "+":
+                newValue = currentValue + operand;
+                break;
+            case "-":
+                newValue = currentValue - operand;
+                break;
+            case "x":
+            case "*":
+                newValue = currentValue * operand;
+                break;
+            case "/":
+                newValue = currentValue / operand;
+                break;
+            default:
+                newValue = currentValue;
+                break;
+        }
+
+        return newValue;
     }
 
     static bool ShouldContinue()
