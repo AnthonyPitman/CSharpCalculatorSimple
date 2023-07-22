@@ -23,15 +23,13 @@ class CalculatorSample
 
     private static int InitializeAccumulator()
     {
-        int accumulator = 0;
-
-        Console.Write("Enter an initial value (press enter for 0): ");
-        string? input = Console.ReadLine();
-
-        if (!string.IsNullOrEmpty(input))
+        string? input;
+        int accumulator;
+        do
         {
-            accumulator = int.Parse(input);
-        }
+            Console.Write("Enter an initial value (press enter for 0): ");
+            input = Console.ReadLine();
+        } while (!int.TryParse(input, out accumulator) && input != "");
 
         return accumulator;
     }
