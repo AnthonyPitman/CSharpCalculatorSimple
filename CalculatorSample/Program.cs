@@ -9,7 +9,7 @@
         Console.Write("Enter an initial value (press enter for 0): ");
         string input = Console.ReadLine();
 
-        if (input != "")
+        if (!string.IsNullOrEmpty(input))
         {
             accumulator = int.Parse(input);
         }
