@@ -67,7 +67,9 @@ class CalculatorSample
 
     private static int CalculateNewValue(int currentValue, Operation operation, int operand)
     {
+#pragma warning disable CS8524
         int newValue = operation switch
+#pragma warning restore CS8524
         {
             Operation.Add => currentValue + operand,
             Operation.Subtract => currentValue - operand,
