@@ -16,6 +16,8 @@
 
         Console.WriteLine($"Initial value: {accumulator}");
 
+        bool shouldContinue;
+
         do
         {
             Console.Write("Enter operation: ");
@@ -47,7 +49,8 @@
             Console.Write("Press enter to continue or 'quit' to stop: ");
             input = Console.ReadLine();
             input = input?.ToLower();
-        } while (input is not "quit" and not "q");
+            shouldContinue = input is not "quit" and not "q";
+        } while (shouldContinue);
 
         Console.WriteLine("Thank you for using the calculator!");
     }
