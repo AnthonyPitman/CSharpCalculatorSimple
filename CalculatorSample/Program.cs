@@ -1,4 +1,13 @@
 ﻿namespace Calculator;
+
+public enum Operation
+{
+    Add,
+    Subtract,
+    Multiply,
+    Divide
+}
+
 class CalculatorSample
 {
     public static void Main()
@@ -92,12 +101,4 @@ class CalculatorSample
         bool shouldContinue = input is not "quit" and not "q";
         return shouldContinue;
     }
-}
-
-public enum Operation
-{
-    Add,
-    Subtract,
-    Multiply,
-    Divide
 }
