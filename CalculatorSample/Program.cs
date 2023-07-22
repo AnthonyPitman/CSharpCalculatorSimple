@@ -7,7 +7,7 @@
         int accumulator = 0;
 
         Console.Write("Enter an initial value (press enter for 0): ");
-        string input = Console.ReadLine();
+        string? input = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(input))
         {
@@ -19,10 +19,10 @@
         do
         {
             Console.Write("Enter operation: ");
-            string operation = Console.ReadLine();
+            string operation = Console.ReadLine() ?? "";
 
             Console.Write("Enter operand (available operands: +, -, x, /): ");
-            input = Console.ReadLine();
+            input = Console.ReadLine() ?? "";
             int operand = int.Parse(input);
 
             switch (operation)
@@ -46,7 +46,7 @@
 
             Console.Write("Press enter to continue or 'quit' to stop: ");
             input = Console.ReadLine();
-            input = input.ToLower();
+            input = input?.ToLower();
         } while (input is not "quit" and not "q");
 
         Console.WriteLine("Thank you for using the calculator!");
