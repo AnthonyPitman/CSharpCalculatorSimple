@@ -35,28 +35,14 @@
 
     static int CalculateNewValue(int currentValue, string? operation, int operand)
     {
-        int newValue;
-
-        switch (operation)
+        int newValue = operation switch
         {
-            case "+":
-                newValue = currentValue + operand;
-                break;
-            case "-":
-                newValue = currentValue - operand;
-                break;
-            case "x":
-            case "*":
-                newValue = currentValue * operand;
-                break;
-            case "/":
-                newValue = currentValue / operand;
-                break;
-            default:
-                newValue = currentValue;
-                break;
-        }
-
+            "+" => currentValue + operand,
+            "-" => currentValue - operand,
+            "x" or "*" => currentValue * operand,
+            "/" => currentValue / operand,
+            _ => currentValue,
+        };
         return newValue;
     }
 
