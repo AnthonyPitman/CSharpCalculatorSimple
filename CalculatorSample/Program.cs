@@ -36,9 +36,15 @@ class CalculatorSample
 
     private static int GetOperandFromUser()
     {
-        Console.Write("Enter operand: ");
-        string input = Console.ReadLine() ?? "";
-        int operand = int.Parse(input);
+        string input;
+        int operand;
+
+        do
+        {
+            Console.Write("Enter operand: ");
+            input = Console.ReadLine() ?? "";
+        } while (!int.TryParse(input, out operand));
+
         return operand;
     }
 
