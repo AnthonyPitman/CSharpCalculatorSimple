@@ -49,6 +49,7 @@ class CalculatorSample
         {
             Console.Write("Enter operation (available operations: +, -, x, /): ");
             string input = Console.ReadLine() ?? "";
+            input = input.Trim();
 
             operation = input switch
             {
